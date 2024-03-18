@@ -1,0 +1,19 @@
+.routes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav {
+    text-decoration: none;
+    color: black;
+
+    & + .nav {
+        margin-left: 20px;
+    }
+}
+
+.active {
+    font-weight: bold;
+    color: green;
+}

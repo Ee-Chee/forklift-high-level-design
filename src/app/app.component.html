@@ -1,8 +1,13 @@
 <main class="main">
-  <div class="routes">
+  <!-- <div class="routes">
     <ng-container *ngFor="let route of routes">
       <a class="nav" [routerLink]="route.link" routerLinkActive="active">{{route.title}}</a>
     </ng-container>
-  </div>
+  </div> -->
+  <nav class="nav" mat-tab-nav-bar>
+    <ng-container *ngFor="let route of routes">
+      <a mat-tab-link [routerLink]="route.link" routerLinkActive="active">{{route.title}}</a>
+    </ng-container>
+  </nav>
   <router-outlet></router-outlet>
 </main>

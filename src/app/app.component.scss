@@ -1,19 +1,14 @@
-.routes {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
 .nav {
     text-decoration: none;
     color: black;
+    background-color: purple;
+    margin-bottom: 50px;
 
-    & + .nav {
-        margin-left: 20px;
+    a {
+        border: 1px solid black;
     }
 }
 
 .active {
-    font-weight: bold;
-    color: green;
+    background-color: green;
 }

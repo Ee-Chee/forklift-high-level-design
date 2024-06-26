@@ -1,26 +1,32 @@
+<div class="extra-container">
+  @if(additionalInfo) {
+    <strong>{{additionalInfo}}</strong>
+  }
+</div>
+
 <div class="block">
     <div class="container">
         <h3>Performance</h3>
         <ul>
-            <li>Ngrx state management</li>
-            <li>Reactive programming</li>
-            <li>Global(API or client) errors handling</li>
-            <li>Clear folder structure, clean and dry code - use interfaces, ES6, etc.</li>
-            <li>Standalone component-based MVVC</li>
-            <li>Angular router for lazy routing</li>
-            <li>PWA Service Worker</li>
-            <li>AOT Compilation</li>
+            <li>Latest angular features(Built-in control flow, defer, trackBy, etc)</li>
+            <li>ChangeDetectionStrategy.OnPush + Signals + Observables</li>
             <li>Use ESlint rules</li>
             <li>Use Typescript strict mode</li>
-            <li>Lazy loading images</li>
+            <li>Clear folder structure, clean and dry code - use interfaces, ES6, etc.</li>
+            <li>AOT Compilation</li>
+            <li>Angular router for lazy routing</li>
+            <li>Ngrx state management</li>
+            <li>Reactive programming</li>
+            <li>Reactive form</li>
+            <li>Standalone component-based MVC</li>
+            <li>PWA Service Worker</li>
+            <li>NgOptimizedImage - preconnect, lazy load images, eager load images as needed</li>
             <li>Images in Webp format</li>
-            <li>Use trackBy for ng loop</li>
-            <li>ChangeDetectionStrategy.OnPush</li>
             <li>Prevent memory leaks - use async pipe, libs or rxjs operators to unsubsribe observables</li>
             <li>No other subscriptions inside a subscription</li>
-            <li>Reactive form</li>
+            <li>Use SSR or SSG(for webapps like dashboard, this is not necessary)</li>
             <li>Use gzip compression</li>
-            <li>Documentation</li>
+            <li>Documentation - *storybook*</li>
         </ul>
     </div>
 
@@ -29,39 +35,48 @@
         <ul>
             <li>SEO - Title, Meta(description, canonical link, open graph)</li>
             <li>Schema Markup - enable rich snippet and content</li>
-            <li>SSR Universal - prerendering static html for crawling and indexing</li>
+            <li class="extra" (mouseover)="show('Hydration prevents extra work to re-create DOM nodes by matching existing DOM elements at runtime and reuses DOM nodes when possible. Without it, server-side rendered Angular applications will destroy and re-render the application\'s DOM, which may result in a visible UI flicker')" (mouseout)="reset()">
+                Server Side rendering SSR or Static Site Generation SSG using Angular Universal with DOM hydration- faster initial load time(FCP, LCP, etc) than CSR
+            </li>
             <li>Semantic html - header, footer, article, section, anchor, button</li>
             <li>Structured header tags - h1, h2, h3, h4</li>
             <li>Path Location Strategy - HTML5 routing</li>
             <li>Images - lazy-loaded, alt text, webp</li>
-            <li>Submit xml sitemap</li>
+            <li>Submit xml sitemap - for faster crawling and indexing process</li>
             <li>Disallow irrelevant pages in Robots.txt</li>
             <li>Accessibility</li>
+            <li>Google Tag Manager, Google Analytics, Big Query and Looker Studio</li>
         </ul>
     </div>
 
     <div class="container">
         <h3>Security</h3>
         <ul>
-            <li>InnerHtml to sanitize HTML snippet</li>
-            <li>DomSanitizer to bypass trusted source</li>
-            <li>AOT Compilation to prevent XSS attack(Script injection)</li>    
-            <li>Do not direct use DOM API in component - ElementRef, Renderer</li>
+            <li>Use latest stable Angular and dependencies</li>
+            <li>AOT Compilation to prevent XSS attack(Script injection)</li>
+            <li>When dynamically rendering HTML content, use binding innerHTML(built-in sanitized), to prevent XSS</li>
+            <li class="extra" (mouseover)="show('this.sanitizer.sanitize(SecurityContext.HTML, this.unsafeHtml)')" (mouseout)="reset()">As necessary, use DomSanitizer's sanitze method or library like Dompurify</li>
+            <li>Use DomSanitizer's bypassSecurityTrustHtml only on trusted and/or sanitized HTML content</li>
+            <li class="extra" (mouseover)="show(' @ViewChild(\'myElement\') myElement: ElementRef; this.renderer.setStyle(this.myElement.nativeElement, \'color\', color);')" (mouseout)="reset()">
+                No direct DOM manipulation - e.g. ElementRef's nativeElement or Document's getElementById, use Renderer2 instead for safety and Angular stability(not bypassing change detection, lifecycle hooks) reasons
+            </li>
+            <li>Global(API or client) errors handling</li>
             <li>Route Guard</li>
-            <li>Use latest stable angular libraries and other dependencies</li>
-            <li>JWT access token for API request authentication</li>
+            <li>HTTPS, OAuth2, JWT Authentication</li>
+            <li>Use environment variables - keep api keys and secrets safe</li>
+            <li>Stay educated</li>
         </ul>
     </div>
 
     <div class="container">
         <h3>Testing</h3>
         <ul>
-            <li>MVVM Architecture</li>
             <li>Unit testing - Karma and Jasmin</li>
             <li>E2E testing - Cypress</li>
             <li>Set up staging and production environments for testing</li>
             <li>Use sandbox on staging system for payment dependencies like Paypal, Klarna</li>
             <li>Lighthouse</li>
+            <li>*Angular DevTools*</li>
         </ul>
     </div>
 </div>

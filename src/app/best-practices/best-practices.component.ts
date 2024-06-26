@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './best-practices.component.scss'
 })
 export class BestPracticesComponent {
+  additionalInfo = '';
 
+  show(info: string) {
+    this.additionalInfo = info
+  }
+
+  reset() {
+    this.additionalInfo = '';
+  }
 }

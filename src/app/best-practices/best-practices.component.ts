@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-best-practices',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
   styleUrl: './best-practices.component.scss'
 })
 export class BestPracticesComponent {
+  dialog = inject(MatDialog);
+
   additionalInfo = '';
 
   show(info: string) {
@@ -16,5 +19,9 @@ export class BestPracticesComponent {
 
   reset() {
     this.additionalInfo = '';
+  }
+
+  openDialog() {
+    this.dialog.open(BestPracticesComponent, {})
   }
 }
